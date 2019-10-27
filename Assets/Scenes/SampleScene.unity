@@ -599,7 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respuestaPrefab: {fileID: 4025690518140097101, guid: db63ae0b766fea442bb26c47dbfae2a0,
     type: 3}
-  textoPregunta: {fileID: 0}
+  textoPregunta: {fileID: 968559557}
 --- !u!114 &968559557
 MonoBehaviour:
   m_ObjectHideFlags: 0
