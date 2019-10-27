@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4025690518140097097}
   - component: {fileID: 4025690518140097102}
   - component: {fileID: 4025690518140097103}
-  - component: {fileID: 114252683721098388}
+  - component: {fileID: 114390033199265086}
   m_Layer: 5
   m_Name: Respuesta
   m_TagString: Untagged
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &114252683721098388
+--- !u!114 &114390033199265086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -594,12 +594,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 968559554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53d3b8c0b38e5764cb2c05f75c6c4512, type: 3}
+  m_Script: {fileID: 11500000, guid: 34a40e59ad6765b47bbafa594ef0c19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   respuestaPrefab: {fileID: 4025690518140097101, guid: db63ae0b766fea442bb26c47dbfae2a0,
     type: 3}
-  textoPregunta: {fileID: 968559557}
+  textoPregunta: {fileID: 0}
 --- !u!114 &968559557
 MonoBehaviour:
   m_ObjectHideFlags: 0
