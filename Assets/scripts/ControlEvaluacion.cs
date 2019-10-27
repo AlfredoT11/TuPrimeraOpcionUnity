@@ -9,6 +9,9 @@ public class ControlEvaluacion : MonoBehaviour
     string personajeSeleccionado;
     string medioBusquedaTrabajo;
     string vacanteElegida;
+
+    List<GameObject> evaluaciones;
+
     //Responsabilidad
     List<object> lista12;
     List<object> lista14;
@@ -25,17 +28,23 @@ public class ControlEvaluacion : MonoBehaviour
     public void seleccionPersonaje(string personajeSeleccionado){
         Debug.Log("Personaje seleccionado: "+personajeSeleccionado);
         this.personajeSeleccionado = personajeSeleccionado;
+        evaluaciones[0].SetActive(false);
+        evaluaciones[1].SetActive(true);
     }
 
     public void seleccionMT(string medioSeleccionado){
         Debug.Log("Medio seleccionado: "+medioSeleccionado);
         this.medioBusquedaTrabajo = medioSeleccionado;
+        evaluaciones[1].SetActive(false);
+        evaluaciones[2].SetActive(true);
 
     }
 
     public void eleccionVacante(string vacanteElegida){
         Debug.Log("Vacante elegida: "+vacanteElegida);
         this.vacanteElegida = vacanteElegida;
+        evaluaciones[2].SetActive(false);
+        evaluaciones[3].SetActive(true);
     }
 
     public void eleccionRecibimiento(int puntuacion){
@@ -44,6 +53,8 @@ public class ControlEvaluacion : MonoBehaviour
         lista42[1] = (int)lista42[1] + 1;
 
         Debug.Log("4.2 Puntuacion: "+lista42[0]+" Cantidad: "+lista42[1]);
+        evaluaciones[3].SetActive(false);
+        evaluaciones[4].SetActive(true);
     }
 
     public void eleccionClienteMolesto(List<int> valoresPonderados){
@@ -72,10 +83,25 @@ public class ControlEvaluacion : MonoBehaviour
         Debug.Log("2.3 Puntuacion: "+lista23[0]+" Cantidad: "+lista23[1]);
         Debug.Log("2.5 Puntuacion: "+lista25[0]+" Cantidad: "+lista25[1]);
         Debug.Log("4.2 Puntuacion: "+lista42[0]+" Cantidad: "+lista42[1]);
+
+        evaluaciones[4].SetActive(false);
+        //evaluaciones[5].SetActive(true);
     }
 
     void Start()
     {
+
+        evaluaciones = new List<GameObject>();
+        evaluaciones.Add(GameObject.Find("Introduccion"));
+        evaluaciones.Add(GameObject.Find("MedioTrabajo"));
+        evaluaciones.Add(GameObject.Find("Trabajo"));
+        evaluaciones.Add(GameObject.Find("RecibimientoCliente"));
+        evaluaciones.Add(GameObject.Find("ClienteMolesto"));
+
+        evaluaciones[1].SetActive(false);
+        evaluaciones[2].SetActive(false);
+        evaluaciones[3].SetActive(false);
+        evaluaciones[4].SetActive(false);
 
         lista12 = new List<object>();
         lista12.Add(0); //Valor total.
