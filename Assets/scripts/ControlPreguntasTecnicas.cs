@@ -15,6 +15,7 @@ public class ControlPreguntasTecnicas : MonoBehaviour
     private List<string> preguntasS;
     private List<RespuestaTecnica> respuestasTecnicas;
     private double[] ponderacionesFinales;
+    private string nombreUsuario;
 
     GameObject pruebaTerminada;
 
@@ -33,6 +34,16 @@ public class ControlPreguntasTecnicas : MonoBehaviour
 
             this.transform.gameObject.SetActive(false);
             pruebaTerminada.SetActive(true);
+
+            List<object> paqueteFinal = new List<object>();
+            paqueteFinal.Add(nombreUsuario);
+            paqueteFinal.Add(ponderacionesFinales[0]);
+            paqueteFinal.Add(ponderacionesFinales[1]);
+            paqueteFinal.Add(ponderacionesFinales[2]);
+            paqueteFinal.Add(ponderacionesFinales[3]);
+            Debug.Log("MENSAJE FINAL ENVIADO");
+            GameObject.Find("InformacionPruebaTecnica").SendMessage("recibirInformacion", paqueteFinal);
+
 
         }
         
@@ -54,11 +65,17 @@ public class ControlPreguntasTecnicas : MonoBehaviour
 
     }
 
+    public void instanciarTerminar(List<object> paquete){
+        Debug.Log("Nombre recibido: "+paquete[1]);
+        pruebaTerminada = (GameObject)paquete[0];
+        this.nombreUsuario = paquete[1].ToString();
+    }
+
     void Start()
     {
         
-        pruebaTerminada = GameObject.Find("PruebaTerminada");
-        pruebaTerminada.SetActive(false);
+        //pruebaTerminada = GameObject.Find("PruebaTerminada");
+        //pruebaTerminada.SetActive(false);
 
         respuestasTecnicas = new List<RespuestaTecnica>();
         //MK, ME, EL, SI
